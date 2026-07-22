@@ -25,3 +25,19 @@ combine both approaches at massive scale; our version focuses purely on song att
 
 ### Ranking Rule:
 All songs are scored independently, sorted highest to lowest, and the top k are returned.
+
+### Algorithm Recipe (finalized)
+
+| Rule | Points | Logic |
+|---|---|---|
+| Genre match | 40 | +40 if song.genre == favorite_genre |
+| Mood match | 30 | +30 if song.mood == favorite_mood |
+| Energy closeness | 20 | 20 × (1 − abs(song.energy − target_energy)) |
+| Acousticness fit | 10 | 10 × song.acousticness if likes_acoustic, else 10 × (1 − song.acousticness) |
+
+### Potential Biases
+- Genre match dominates at 40 points — a perfect genre match with wrong mood 
+  still beats a wrong genre with perfect mood + energy
+- With only 18 songs, some genres appear once so users of those genres 
+  always get the same top recommendation
+- No listen history means the system can't learn or adapt over time
