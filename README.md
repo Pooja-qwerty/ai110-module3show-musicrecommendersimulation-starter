@@ -41,3 +41,27 @@ All songs are scored independently, sorted highest to lowest, and the top k are 
 - With only 18 songs, some genres appear once so users of those genres 
   always get the same top recommendation
 - No listen history means the system can't learn or adapt over time
+
+
+## Sample Recommendation Output
+
+```
+User profile: genre=pop, mood=happy, energy=0.8, likes_acoustic=False
+
+Top recommendations:
+
+Sunrise City - Score: 97.80
+Because: genre match: pop (+40 pts) | mood match: happy (+30 pts) | energy 0.82 vs target 0.80 (+19.6 pts) | low acousticness 0.18 suits electronic preference (+8.2 pts) | tempo: 118 BPM | danceability: 0.79 | valence: 0.84
+
+Gym Hero - Score: 66.90
+Because: genre match: pop (+40 pts) | energy 0.93 vs target 0.80 (+17.4 pts) | low acousticness 0.05 suits electronic preference (+9.5 pts) | tempo: 132 BPM | danceability: 0.88 | valence: 0.77
+
+Levels - Score: 58.00
+Because: mood match: happy (+30 pts) | energy 0.88 vs target 0.80 (+18.4 pts) | low acousticness 0.04 suits electronic preference (+9.6 pts) | tempo: 126 BPM | danceability: 0.91 | valence: 0.82
+
+Rooftop Lights - Score: 55.70
+Because: mood match: happy (+30 pts) | energy 0.76 vs target 0.80 (+19.2 pts) | low acousticness 0.35 suits electronic preference (+6.5 pts) | tempo: 124 BPM | danceability: 0.82 | valence: 0.81
+
+Golden Hour - Score: 50.90
+Because: mood match: happy (+30 pts) | energy 0.62 vs target 0.80 (+16.4 pts) | low acousticness 0.55 suits electronic preference (+4.5 pts) | tempo: 104 BPM | danceability: 0.71 | valence: 0.88
+```
